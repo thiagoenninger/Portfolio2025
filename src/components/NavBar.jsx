@@ -53,7 +53,13 @@ export const Navbar = () => {
         </div>
         {/* mobile */}
 
-        <button>{isMenuOpen ? <X size={24} /> : <Menu size={24} />}</button>
+        <button
+          onClick={() => setIsMenuOpen((prev) => !prev)}
+          className="md:hidden p-2 text-foreground z-50"
+          arial-label={isMenuOpen ? "Close Menu" : "Open Menu"}
+        >
+          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
 
         <div
           className={cn(
